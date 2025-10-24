@@ -87,7 +87,7 @@ zoom_rooms:read:list_devices:admin
 <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
     <a href="newexample.mp4" style="flex: 1 1 300px; max-width: 400px;">
         <img
-          src="preview.gif"
+          src="preview2.gif"
           alt="Demo Preview"
           style="width: 100%; height: auto; border-radius: 8px;"
         />
