@@ -230,7 +230,7 @@ def list_of_devices_in_string(list_of_devices_passed: Dict[str, str], index_of_r
             emoji = "❌"
         else:
             emoji = "✅"
-        return_string += f"\n\n •{emoji} {list_of_devices_passed[index].get('device_type')} — {list_of_devices_passed[index].get('status')}"
+        return_string += f"\n\n •{emoji} {list_of_devicfes_passed[index].get('device_type')} — {list_of_devices_passed[index].get('status')}"
     return return_string
 
 
