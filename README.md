@@ -17,15 +17,6 @@
 </div>
 
 
-<!--
-
-Project Overview: Elevator pitch—what it is and why it matters.
-Architecture & Tech Stack: How it’s built and what tools you used.
-Setup & Installation: Exactly how to get it running.
-Usage & Demo: Show it in action—commands, screenshots, or GIFs.
-Next Steps & Lessons Learned: Reflect on what you’d do next and what you learned along the way.
--->
-
 <div align="center">
   <h2 id="project-overview">📌 Project Overview</h2>
   <hr />
@@ -35,20 +26,20 @@ The days of random Zoom Room issues—where, out of nowhere, you have to stop wh
 
   
 
-With this Zoom Room script running on **NEBAV02**, the status of all NEB Zoom Rooms across all our locations is continuously monitored. If a Zoom Room (or any of its devices) goes offline, the IT team will be instantly alerted via Microsoft Teams. The script will also automatically generate a support ticket on TrackIt, giving us another way to track outages while ensuring you get credit for the work you do 🙂.
+This Zoom Room script was designed to run on prem and shows the status of all Zoom Rooms that are lined to your Zoom Room admin account. If a Zoom Room (or any of its devices) goes offline, your team will be instantly alerted via Microsoft Teams. The script will also automatically generate a support ticket (designed for TrackIt), giving you another way to track outages while ensuring you get credit for the work you do 🙂.
 
   
 
-To integrate seamlessly with Rapid7 and other monitoring tools, we developed a lightweight tracking system that appends each new event—such as a room going offline/coming back online, a device going offline/coming back online, the script going offline, message-sending errors, and more—into a JSON Lines file.
+To integrate seamlessly with Rapid7 and other monitoring tools, we've imbedded lightweight logging that appends each new event—such as a room going offline/coming back online, a device going offline/coming back online, the script going offline, message-sending errors, and more—into a JSON Lines file.
 <div align="center">
   <h2 id="architecture--tech-stack">🏗️ Architecture & Tech Stack</h2>
   <hr />
 </div>
 --
 
-At the heart of the script is Python. About 90% of the backend is written in Python, handling everything from OAuth verification to formatting Microsoft Teams messages, monitoring which rooms go offline or come back online, and more. The remaining 10% runs on Power Automate, giving us a secure way to send Teams notifications without relying on a webhook or other communication method. This is also where we create the HelpDesk ticket that gets posted to TrackIt.
+At the heart of the script is Python. About 90% of the backend is written in Python, handling everything from OAuth verification to formatting Microsoft Teams messages, monitoring which rooms go offline or come back online, and more. The remaining 10% runs on Power Automate, which allows for a secure way to send Teams notifications without relying on a webhook or other communication method. This is also where we create the HelpDesk ticket that gets posted to TrackIt.
 
-It's important to note that we do recognize another viable way of communication could be done through Microsoft GraphAPI. We decided to go a different route due to restrictions.
+> It's important to note that we do recognize another viable way of communication could be done through Microsoft GraphAPI. We decided to go a different route due to restrictions.
 <div align="center">
   <h2 id="setup--installation-structure">⚙️ Setup & Installation Structure</h2>
   <hr />
@@ -106,6 +97,7 @@ zoom_rooms:read:list_devices:admin
   <h2 id="next-steps--lessons-learned">🚀 Next Steps & Lessons Learned</h2>
   <hr />
 </div>
-As we move to Microsoft Intune, we will gain more intricate control over our iPad and Zoom Room devices. Using the API and the data it provides, we plan to add features like battery percentage, if a devices was left off the charger while not in use, software updates, and more.
-
-We really had a lot of fun building this app and learned so much with the ability to do API development at an enterprise level. Our hope is to showcase the true power that API's hold and what this could mean, not just for our team, but for the entire bank. We can build dedicated tools that meet the direct needs of each and every team in the bank. 
+If you're using Microsoft Intune, there's a lot more intricate control over iPads and Zoom Room devices. Using the API and the data it provides, we plan to add features like battery percentage, if a devices was left off the charger while not in use, software updates, and more.
+<br>
+<br>
+We really had a lot of fun building this app and learned so much with the ability to do API development at an enterprise level. Our hope is to showcase the true power that API's hold and what this could mean, not just for our team, but for an entire company's workflow. We can build dedicated tools that meet the direct needs of each and every team. 
